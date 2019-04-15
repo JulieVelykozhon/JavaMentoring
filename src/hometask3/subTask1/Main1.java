@@ -7,5 +7,6 @@ public class Main1 {
      PlayingCard nameCard =  deck.drawCard();
         System.out.println("Card rank:" + nameCard.getRank());
         System.out.println("Card suit:" + nameCard.getSuit());
+   
     }
 }
