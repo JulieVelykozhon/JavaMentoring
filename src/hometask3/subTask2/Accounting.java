@@ -1,14 +1,14 @@
 package hometask3.subTask2;
 
 public class Accounting {
-    int numberOfWorkingHours = 0;
-    double perHourRate = 0.0;
+    int numberOfWorkingHours;
+    double perHourRate;
     double calculatedPayment;
-    public double pay(int numberOfWorkingHours, double perHourRate){
+    public static void pay(int numberOfWorkingHours, double perHourRate){
 
-        calculatedPayment = perHourRate * numberOfWorkingHours;
+        double calculatedPayment = perHourRate * numberOfWorkingHours;
+        System.out.println(calculatedPayment);
 
-        return calculatedPayment;
     }
 
     public int getNumberOfWorkingHours() {
