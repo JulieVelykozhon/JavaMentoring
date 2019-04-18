@@ -1,22 +1,20 @@
 package hometask3.subTask1;
 
 public class PlayingCard {
-   private String rank;
-     private String suit;
+    private String rank;
+    private String suit;
 
-    public String getRank() {
-        return rank;
+    public PlayingCard(String ranks, String suits) {
+        this.rank= ranks;
+        this.suit = suits;
+
     }
 
-    public void setRank(String rank) {
-        this.rank = rank;
-    }
-
-    public String getSuit() {
-        return suit;
-    }
-
-    public void setSuit(String suit) {
-        this.suit = suit;
+    @Override
+    public String toString() {
+        return "Card{" +
+                "rank='" + rank + '\'' +
+                ", suit='" + suit + '\'' +
+                '}';
     }
 }

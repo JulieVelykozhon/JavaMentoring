@@ -1,63 +1,33 @@
 package hometask3.subTask1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Deck {
-    private PlayingCard deck[] = new PlayingCard[56];
-    int deckIndexValue = 0;
-    public PlayingCard[] getDeck() {
-        return deck;
-    }
 
-    public void setDeck(PlayingCard[] deck) {
-        this.deck = deck;
-    }
-    public void createDeckOfCards (){
-        String tempSuit;
-        int counter = 0;
-        for(int i = 0; i < 4; i++){
+    public List<PlayingCard> cards;
 
-            if (i == 0){
-                tempSuit = "Hearts";
-            }
-            else if (i == 1) {
-                tempSuit = "Diamonds";
-            }
-            else if (i == 2) {
-                tempSuit = "Clubs";
-            }
-            else {
-                tempSuit = "Spades";
-            }
+        public Deck() {
 
-            for (Integer j = 6; j < 15; j++){
-                PlayingCard card1 = new PlayingCard();
-                card1.setSuit(tempSuit);
-                if (j >= 6 && j <= 10){
-                    card1.setRank(j.toString());
+            String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+            String[] ranks = {"six", "seven", "eight", "nine", "ten", "Jack", "Queen", "King", "Ace"};
+
+            List<PlayingCard> allCards = new ArrayList<>();
+
+            for (String suit : suits) {
+                for (String rank : ranks) {
+                    allCards.add(new PlayingCard(rank, suit));
                 }
-
-                else if (j == 11) {
-                    tempSuit = "Jack";
-                }
-                else if (j == 12) {
-                    tempSuit = "Queen";
-                }
-                else if (j == 13) {
-                    tempSuit = "King";
-                }
-                else {
-                    tempSuit = "Ace";
-                }
-
-             deck [counter] = card1;
-                counter++;
             }
+            setCards(allCards);
+        }
 
+        public List<PlayingCard> getCards() {
+            return cards;
+        }
+
+        public void setCards(List<PlayingCard> cards) {
+            this.cards = cards;
         }
 
     }
-      public PlayingCard drawCard () {
-          return  deck [deckIndexValue++];
-
-
-      }
-}
