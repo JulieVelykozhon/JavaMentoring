@@ -1,8 +1,8 @@
 package hometask5.subTask1;
 
 public class Triangle {
-    public static void main(String[] args) {
-       // try {
+    public static void main(String[] args) throws  Exception{
+
             double x1 = 0.0,
                     x2 = 3.0,
                     x3 = 0.0;
@@ -12,10 +12,10 @@ public class Triangle {
             double a = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
             double b = Math.sqrt((x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3));
             double c = Math.sqrt((x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3));
-        //} catch (IllegalArgumentException e) {
-            if (a + b <= c || a + c <= b || b + c <= a)
-            System.out.println("Triangle does not exist");
 
+            if (a + b <= c || a + c <= b || b + c <= a){
+                throw new Exception("Triangle does not exist");
+            }
             else
             {
                 double p = (a + b + c) / 2.0;
